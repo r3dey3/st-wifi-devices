@@ -6,17 +6,17 @@ the SmartThings hub as most of them include the IP and port in the device networ
 id, but in order to receive push data it needs to be the MAC address.
 
 ## Service Manager
-[smartapps/r3dey3/simple-lan-device-manager.src](Simple Lan Device Manager) is
+[Simple Lan Device Manager](smartapps/r3dey3/simple-lan-device-manager.src) is
 a SmartThings smartapp which handles device discovery as well as updating IP 
 information in case it changes.
 
 ## Device Types
-[devicetypes/r3dey3/rest-switch.src](Rest Switch) is a simple device type that
+[Rest Switch](devicetypes/r3dey3/rest-switch.src) is a simple device type that
 operates using JSON requests to query and change state.
 
-[devicetypes/r3dey3/wifi-contact-sensor.src](WiFi Contact Sensor) is a simple contact
+[WiFi Contact Sensor](devicetypes/r3dey3/wifi-contact-sensor.src) is a simple contact
 sensor device.
 
 # Installation
 See [devicetypes/README.md](devicetypes/README.md) for installing Device Types, and
-[smartapps/r3dey3/simple-lan-device-manager.src/README.md](smartapps/r3dey3/simple-lan-device-manager.src/README.md]) for installing the SmartApp
+[smartapps/r3dey3/simple-lan-device-manager.src/README.md](smartapps/r3dey3/simple-lan-device-manager.src/README.md)) for installing the SmartApp

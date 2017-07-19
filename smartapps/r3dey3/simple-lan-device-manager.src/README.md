@@ -13,8 +13,8 @@ There are 2 ways of installing:
 1. Copy and paste
 
 ## Integrating with GitHub
-1. Follow the SmartThings documentation to [http://docs.smartthings.com/en/latest/tools-and-ide/github-integration.html](integrate with GitHub)
-1. Log Into the SmartThings IDE ([https://graph.api.smartthings.com/](US Users), [https://graph-eu01-euwest1.api.smartthings.com/](UK Users))
+1. Follow the SmartThings documentation to [integrate with GitHub](http://docs.smartthings.com/en/latest/tools-and-ide/github-integration.html)
+1. Log Into the SmartThings IDE ([US Users](https://graph.api.smartthings.com/), [UK Users](https://graph-eu01-euwest1.api.smartthings.com/))
 1. Find the **My SmartApps** link on the top of the page.
 1. Find the **Settings** button at the upper-right corner of your SmartThings IDE page (this will only appear after you have configured with GitHub).
 1. Clicking this button will open the GitHub Repository Integration page. Enter the information below:
@@ -28,9 +28,9 @@ There are 2 ways of installing:
 1. When done syncing, the new SmartApp should now appear in your IDE.
 
 ## Copy and paste
-1. The code for the SmartApp can be found in [https://raw.githubusercontent.com/r3dey3/st-wifi-devices/master/smartapps/r3dey3/simple-lan-device-manager.src/simple-lan-device-manager.groovy](simple-lan-device-manager.groovy)
+1. The code for the SmartApp can be found in [simple-lan-device-manager.groovy](https://raw.githubusercontent.com/r3dey3/st-wifi-devices/master/smartapps/r3dey3/simple-lan-device-manager.src/simple-lan-device-manager.groovy)
 1. Select all of the code (typically Ctrl+A) and copy it (typically Ctrl+C)
-1. Next, log Into the SmartThings IDE ([https://graph.api.smartthings.com/](US Users), [https://graph-eu01-euwest1.api.smartthings.com/](UK Users))
+1. Next, log Into the SmartThings IDE ([US Users](https://graph.api.smartthings.com/), [UK Users](https://graph-eu01-euwest1.api.smartthings.com/))
 1. Find the **My SmartApps** link on the top of the page.
 1. Click on the **+New SmartApp** in the upper-right corner.
 1. Select the **From Code** tab along the top section.
