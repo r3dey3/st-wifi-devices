@@ -15,7 +15,7 @@ There are 2 ways of installing:
    * Branch: master
 1. Close the GitHub Repository Integration page by clicking the Save button.
 1. Click the **Update from Repo** button at the upper-right corner of your SmartThings IDE and select 'st-wifi-devices' from the list.
-1. In the right-hand column you will see two devicetypes/r3dey3/..., select both of them using the checkbox.
+1. In the right-hand column you will see two devicetypes/r3dey3/..., select both of them using the checkbox. Do not select 'README.md'
 1. At the bottom-right corner of the **Update from Repo** page, select **Publish** using the checkbox and then click **Execute Update**.
 
 ## Copy and paste
