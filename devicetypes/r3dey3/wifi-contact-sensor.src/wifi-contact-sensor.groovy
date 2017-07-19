@@ -93,5 +93,5 @@ private GET() {
     parent.GET(this, "/state.json")
 }
 private SUBSCRIBE() {
-	parent.POST(this, '/subscribe', "http://" + parent.GetCallBackAddress(device.hub) + "/")
+	parent.POST(this, '/subscribe', [callback:"http://" + parent.GetCallBackAddress(device.hub) + "/"])
 }
