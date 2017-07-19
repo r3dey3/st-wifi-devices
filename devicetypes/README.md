@@ -10,9 +10,9 @@ There are 2 ways of installing:
 1. Find the '**My Device Handlers**' link on the top of the page.
 1. Find the **Settings** button at the upper-right corner of your SmartThings IDE page (this will only appear after you have configured with GitHub).
 1. Clicking this button will open the GitHub Repository Integration page. Enter the information below:
-  * Owner: r3dey3
-  * Name: st-wifi-devices
-  * Branch: master
+   * Owner: r3dey3
+   * Name: st-wifi-devices
+   * Branch: master
 1. Close the GitHub Repository Integration page by clicking the Save button.
 1. Click the **Update from Repo** button at the upper-right corner of your SmartThings IDE and select 'st-wifi-devices' from the list.
 1. In the right-hand column you will see two devicetypes/r3dey3/..., select both of them using the checkbox.
@@ -20,8 +20,8 @@ There are 2 ways of installing:
 
 ## Copy and paste
 1. The code for the Device Handlers:
-  * [ContactSensor](https://raw.githubusercontent.com/r3dey3/st-wifi-devices/master/smartapps/r3dey3/devicetypes/r3dey3/wifi-contact-sensor.src/wifi-contact-sensor.groovy)
-  * [Rest Switch](https://raw.githubusercontent.com/r3dey3/st-wifi-devices/master/smartapps/r3dey3/devicetypes/r3dey3/rest-switch.src/rest-switch.groovy)
+   * [ContactSensor](https://raw.githubusercontent.com/r3dey3/st-wifi-devices/master/smartapps/r3dey3/devicetypes/r3dey3/wifi-contact-sensor.src/wifi-contact-sensor.groovy)
+   * [Rest Switch](https://raw.githubusercontent.com/r3dey3/st-wifi-devices/master/smartapps/r3dey3/devicetypes/r3dey3/rest-switch.src/rest-switch.groovy)
 1. Select all of the code (typically Ctrl+A) and copy it (typically Ctrl+C)
 1. Next, log Into the SmartThings IDE ([US Users](https://graph.api.smartthings.com/), [UK Users](https://graph-eu01-euwest1.api.smartthings.com/))
 1. Find the '**My Device Handlers**' link on the top of the page.

@@ -18,9 +18,9 @@ There are 2 ways of installing:
 1. Find the **My SmartApps** link on the top of the page.
 1. Find the **Settings** button at the upper-right corner of your SmartThings IDE page (this will only appear after you have configured with GitHub).
 1. Clicking this button will open the GitHub Repository Integration page. Enter the information below:
-  * Owner: r3dey3
-  * Name: st-wifi-devices
-  * Branch: master
+   * Owner: r3dey3
+   * Name: st-wifi-devices
+   * Branch: master
 1. Close the GitHub Repository Integration page by clicking the Save button.
 1. Click the **Update from Repo** button at the upper-right corner of your SmartThings IDE and select 'st-wifi-devices' from the list.
 1. In the right-hand column you will see smartapps/r3dey3/simple-lan-device-manager.src/simple-lan-device-manager.groovy, select this using the checkbox.
