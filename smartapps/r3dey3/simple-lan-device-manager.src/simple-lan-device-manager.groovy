@@ -78,11 +78,11 @@ def initialize() {
 
 //Send discovery command
 void ssdpDiscover() {
-	sendHubCommand(new physicalgraph.device.HubAction("lan discovery urn:schemas-upnp-org:device:python:1", physicalgraph.device.Protocol.LAN))
+	sendHubCommand(new physicalgraph.device.HubAction("lan discovery urn:schemas-upnp-org:device:st-wifi-dev", physicalgraph.device.Protocol.LAN))
 }
 // Subscribe to discovery responses
 void ssdpSubscribe() {
-	subscribe(location, "ssdpTerm.urn:schemas-upnp-org:device:python:1", ssdpHandler)
+	subscribe(location, "ssdpTerm.urn:schemas-upnp-org:device:st-wifi-dev", ssdpHandler)
 }
 
 // Get full device information and confirm we can communicate

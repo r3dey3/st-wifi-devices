@@ -234,7 +234,7 @@ void setup() {
 	SSDP.setName("WoodWhisperer Dust Deputy Light Sensor");
 	SSDP.setURL("state.json");
 	SSDP.setModelName("WiFi Contact Sensor");
-	SSDP.setDeviceType("urn:schemas-upnp-org:device:python:1");
+	SSDP.setDeviceType("urn:schemas-upnp-org:device:st-wifi-dev");
 	SSDP.setManufacturer("r3dey3");
 	//SSDP.setManufacturerURL("http://www.philips.com");
 	SSDP.begin();
