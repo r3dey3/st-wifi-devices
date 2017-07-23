@@ -39,34 +39,35 @@ String callbackUrl;
  * Tracking and Sending State
  */
 #define PIN D2
-#define RESET_SETTINGS_PIN D3
+#define RESET_SETTINGS_PIN D5
+#define RESET_SETTINGS_PIN2 D7
 
 //Last read pin value and change time
 int LastValue;
-int LastChangeTime;
+unsigned long LastChangeTime;
 
 //Cheating at JSON messages
 const String CLOSED_MSG("{\"contact\":\"closed\"}");
 const String OPENED_MSG("{\"contact\":\"open\"}");
 
-void SendState() {
-	String value;
+void SendState(int val) {
+	String json;
 
 	if (callbackUrl.length() == 0) {
 		return;
 	}
-	//Contact is Normall closed (so should be grounded)
-	if (LastValue == 0) {
-		value = CLOSED_MSG;
+	//Contact is 1 when the light is off.. also the same as a NO switch
+	if (val) {
+		json = CLOSED_MSG;
 	}
 	else {
-		value = OPENED_MSG;
+		json = OPENED_MSG;
 	}
 
 	HTTPClient http;
 	http.begin(callbackUrl);
 	http.addHeader("Content-Type", "application/json");
-	int code = http.POST(value); 
+	int code = http.POST(json); 
 	Serial.printf("POST Returned %d\n", code);
 	http.end();
 }
@@ -144,7 +145,11 @@ void ConnectWifi() {
 	LedTicker.attach(0.25, tick);
 
 	Serial.println("Checking for reset");
+
 	pinMode(RESET_SETTINGS_PIN, INPUT_PULLUP);
+	pinMode(RESET_SETTINGS_PIN2, OUTPUT);
+	digitalWrite(RESET_SETTINGS_PIN2, 0);
+
 	for (int i = 0; i < 3*4; i++) {
 		delay(250);
 		if (digitalRead(RESET_SETTINGS_PIN) == LOW) {
@@ -159,6 +164,8 @@ void ConnectWifi() {
 		}
 	}
 
+	pinMode(RESET_SETTINGS_PIN, INPUT);
+	pinMode(RESET_SETTINGS_PIN2, INPUT);
 	//start a really slow blink for connecting
 	LedTicker.attach(5, tick);
 
@@ -208,6 +215,7 @@ void setup() {
 	});
 
 	HTTP.on("/description.xml", HTTP_GET, [](){
+		Serial.println("Upnp query");
 		SSDP.schema(HTTP.client());
 	});
 
@@ -235,6 +243,7 @@ void setup() {
 	SSDP.setURL("state.json");
 	SSDP.setModelName("WiFi Contact Sensor");
 	SSDP.setDeviceType("urn:schemas-upnp-org:device:st-wifi-dev");
+	//SSDP.setDeviceType("urn:schemas-upnp-org:device:basic:1");
 	SSDP.setManufacturer("r3dey3");
 	//SSDP.setManufacturerURL("http://www.philips.com");
 	SSDP.begin();
@@ -245,7 +254,7 @@ void setup() {
 	LastValue = digitalRead(PIN);
 
 	/* Send the current state */
-	SendState();
+	SendState(LastValue);
 }
 
 
@@ -254,19 +263,13 @@ void loop() {
 	// Handle and HTTP clients
 	HTTP.handleClient();
 
-
 	// Handle Input
 	int value = digitalRead(PIN);
-
-	if (millis() < LastChangeTime) {
-		//Handle rollover
-		LastChangeTime = millis();
-	}
 
 	if (value != LastValue && (millis() - LastChangeTime) > 1000 ) {
 		Serial.println("Value changed");
 		LastValue = value;
 		LastChangeTime = millis();
-		SendState();
+		SendState(value);
 	}
 }
