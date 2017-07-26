@@ -43,3 +43,26 @@ will bring up a WiFi configuration page. Enter the settings for your WiFi networ
 
 ## Reset Configuration Switch
 Unplug and plug the sensor back in. Once the Status LED starts blinking it the, push the 'Wipe Settings' button until the Status LED goes solid. If the Status LED goes solid then the settings have been reset. If LED continues to blink, the settings were not reset and you should try again.
+
+# Electronics
+
+## Parts list
+
+* [WEMOS D1 Mini](https://wiki.wemos.cc/products:d1:d1_mini)
+* [Light detection digital switch](http://a.co/c4E1IT5)
+* [Tactile Switch Button (6mm slim)](https://www.adafruit.com/product/1489)
+
+## Wiring
+I was going to do a diagram/schematic but the wiring is so simple I can do it in 4 bullets.
+
+* The switch is wired between pins D5 and D7.
+* DO TTL of the light detector is wired to pin D2.
+* GND of the light detector is wired to GND.
+* VCC of the light detector is wired to 3V3.
+
+# Software
+The following libraries are used in addition to the standard Arduino software:
+
+* ESP8266 - https://github.com/esp8266/Arduino
+* WiFiManager - https://github.com/tzapu/WiFiManager
+* ArduinoJson - https://github.com/bblanchon/ArduinoJson
