@@ -1,6 +1,14 @@
 # WoodWhisperer Dust Deputy Sensor
 This is a simple WiFi based sensor that behave like a contact sensor in SmartThings, but actually is a simple light level sensor.
 
+Outside of device. Light sensor is where light enters to be detected
+![Outside of device](images/outside.png?raw=true "Outside")
+
+The one switch and sensitivity adjustment.
+![Inside of device](images/diagram.png?raw=true "Location of switches and adjustment")
+
+The three status lights.
+![Status lights](images/lights.png?raw=true "Status lights inside device")
 
 ## WiFi Configuration
 When the device is first turned on it will create a WiFi network "WWDustDSensor"; connecting to this network
@@ -15,17 +23,23 @@ will bring up a WiFi configuration page. Enter the settings for your WiFi networ
 1. Scroll down and select **My Apps**
 1. Select **Simple LAN Device Manager**
 1. After a few moments, it should say **Select Devices (1 found)**
-1. Touch the Select Devices box and select the Checkbox next to **WoodWhispers Dust Deputy Light Sensor**
+1. Touch the Select Devices box and select the Checkbox next to **WoodWhisper Dust Deputy Light Sensor**
 1. Touch **Done** in the upper right, which will return you to the Discovery Started Page.
 1. Touch **Done** one more time. If everything was done correctly you should now have a new Thing in your list.
 
-## LED
-The LED is used as a status when connecting to the network
+## Status LED
 * 1 second blinks - The sensor is waiting for WiFi configuration. You have about 10 minutes to configure.
-* 5 second blinks - Attempting to connect to the network (probably won't see this often)
+* 5 second blinks - Attempting to connect to the network (probably won't see this)
 * Really fast blinking - Failed to configure network; restarting. This could occur if the configured network is down.
 * 0.25 second blinks - Waiting for reset attempt.
+* Off - connected to WiFi
 
+## Power LED
+* On if the device has power from a standard MicroUSB power cable.
 
-## Reset Configuration
-Reset the sensor (unplug and plug back in, or hit reset button) once the LED starts blinking it the, click the 'Wipe Settings' button. If the LED goes solid then the settings have been reset. If the blink rate changes, then you need to try again.
+## Light Detected LED and Sensitivity adjustment
+* The LED lights up when the sensor detects light
+* To adjust sensitivity up turn the screw clockwise; I suggest having the light on, and turning the sensitivity to where the sensor just detects the light; this will prevent false triggers from the lights in the shop. I tested with a bright flashlight in a daylight lit room and was able to adjust the sensitivity to where the sensor was not detecting light without the flashlight.
+
+## Reset Configuration Switch
+Unplug and plug the sensor back in. Once the Status LED starts blinking it the, push the 'Wipe Settings' button until the Status LED goes solid. If the Status LED goes solid then the settings have been reset. If LED continues to blink, the settings were not reset and you should try again.
