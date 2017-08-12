@@ -125,7 +125,7 @@ def addDevices() {
 			}
             if (!d) {
                 log.debug "Creating ${selectedDevice.modelName} with dni: ${dni}"
-                addChildDevice(selectedDevice.manufacturer, selectedDevice.modelName, "${dni}", selectedDevice?.hub, [
+                def dev = addChildDevice(selectedDevice.manufacturer, selectedDevice.modelName, "${dni}", selectedDevice?.hub, [
                     "label": selectedDevice?.name ?: "New SmartThings LAN Device",
                     "data": [
                         "mac": selectedDevice.mac,
@@ -134,6 +134,7 @@ def addDevices() {
                         "ssdpPath": selectedDevice.ssdpPath
                     ]
                 ])
+                dev.refresh()
             }
         }
 	}
